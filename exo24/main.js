@@ -30,11 +30,12 @@ class Personne{
     }
 }
 
-class Eleve{
+class Eleve extends Personne{
     constructor(nom, age, etablissement, notes){
         super(nom, age);
         this.etablissement = etablissement;
-        this.notes = notes = [];
+        this.notes = notes;
+        this.notes = [];
     }
     recevoirNote(number){
         this.notes.push(number);
@@ -51,3 +52,29 @@ class Eleve{
       console.log(`Bonjour, je suis ${this.name}, j'ai ${this.age} ans et j’étudie à ${this.etablissement}`);
     }
 }
+
+const personne1 = new Personne("David", 62);
+const personne2 = new Personne("Samuel", 73);
+
+personne1.presentation();
+personne2.presentation();
+
+const eleve1 = new Eleve("Galaad", 16);
+eleve1.recevoirNote(14, 17, 5, 11, 10);
+eleve1.moyenne();
+eleve1.presentation();
+
+while (eleve1.age > 70) {
+    eleve1.vieillir();
+}
+function comparer(personne1, personne2) {
+    if (personne1 === personne2) {
+        console.log(true);         
+    }else{
+       console.log(false);        
+    }
+}
+const personne3 = new Personne("William", 52);
+const personne4 = new Personne("William", 52);
+
+comparer(personne3, personne4);
