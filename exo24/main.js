@@ -55,8 +55,12 @@ class Eleve extends Personne{
         
         return result;
     }
-    salutations(){
-      console.log(`Bonjour, je suis ${this.nom}, j'ai ${this.age} ans et j’étudie à ${this.etablissement} et ma moyenne est de ${this.moyenne()}`);
+    presentation(){
+        if (this.age < 70) {
+            console.log(`Bonjour, je suis ${this.nom}, j'ai ${this.age} ans et j’étudie à ${this.etablissement} et ma moyenne est de ${this.moyenne()}`);
+        } else {
+            super.presentation();
+        }
     }
 }
 
@@ -73,21 +77,22 @@ eleve1.recevoirNote(5);
 eleve1.recevoirNote(11);
 eleve1.recevoirNote(10);
 
-eleve1.salutations();
+eleve1.presentation();
 
 while (eleve1.age < 70) {
     eleve1.vieillir();
 }
 console.log(eleve1.age);
+eleve1.presentation();
 
 function comparer(personne1, personne2) {
-    if (personne1 === personne2) {
-        console.log(true);         
+    if (personne1.nom === personne2.nom && personne1.age === personne2.age) {
+        return true;         
     }else{
-       console.log(false);        
+       return false;        
     }
 }
 const personne3 = new Personne("William", 52);
 const personne4 = new Personne("William", 52);
 
-comparer(personne3, personne4);
+console.log(comparer(personne3, personne4))
