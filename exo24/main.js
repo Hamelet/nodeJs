@@ -64,9 +64,11 @@ eleve1.recevoirNote(14, 17, 5, 11, 10);
 eleve1.moyenne();
 eleve1.presentation();
 
-while (eleve1.age > 70) {
+while (eleve1.age < 70) {
     eleve1.vieillir();
 }
+console.log(eleve1.age);
+
 function comparer(personne1, personne2) {
     if (personne1 === personne2) {
         console.log(true);         
