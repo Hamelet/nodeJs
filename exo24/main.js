@@ -22,10 +22,17 @@ class Personne{
     anneesAvantRetraite(){
         if (this.age < 70) {
             return 70 - this.age;
-        } return 0;
+        } else{
+            return this.age - 70;
+        };
     }
     presentation(){
-        console.log(`Bonjour, je suis ${this.nom} et j'ai ${this.age}, plus que ${this.anneesAvantRetraite()} et je serai enfin peinard !`);
+        if (this.age < 70){
+            console.log(`Bonjour, je suis ${this.nom} et j'ai ${this.age} ans, plus que ${this.anneesAvantRetraite()} ans et je serai enfin peinard !`);
+        } else {
+            console.log(`Bonjour, je suis ${this.nom} et j'ai ${this.age} ans, je suis à la retraite depuis ${this.anneesAvantRetraite()} ans et je suis peinard !`);
+        }
+        
         
     }
 }
