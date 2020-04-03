@@ -31,25 +31,25 @@ class Personne{
 }
 
 class Eleve extends Personne{
-    constructor(nom, age, etablissement, notes){
+    constructor(nom, age, etablissement, notes = []){
         super(nom, age);
         this.etablissement = etablissement;
         this.notes = notes;
-        this.notes = [];
     }
     recevoirNote(number){
         this.notes.push(number);
     }
     moyenne(){
         let somme = 0;
-        let result = somme/this.notes.length;
+        
         for (let i = 0; i < this.notes.length; i++) {
-            return somme += this.notes[i];
-        }
+            somme += this.notes[i];
+        }let result = somme/this.notes.length;
+        
         return result;
     }
     salutations(){
-      console.log(`Bonjour, je suis ${this.name}, j'ai ${this.age} ans et j’étudie à ${this.etablissement}`);
+      console.log(`Bonjour, je suis ${this.nom}, j'ai ${this.age} ans et j’étudie à ${this.etablissement} et ma moyenne est de ${this.moyenne()}`);
     }
 }
 
@@ -59,10 +59,14 @@ const personne2 = new Personne("Samuel", 73);
 personne1.presentation();
 personne2.presentation();
 
-const eleve1 = new Eleve("Galaad", 16);
-eleve1.recevoirNote(14, 17, 5, 11, 10);
-eleve1.moyenne();
-eleve1.presentation();
+const eleve1 = new Eleve("Galaad", 16, "Cholet");
+eleve1.recevoirNote(14);
+eleve1.recevoirNote(17);
+eleve1.recevoirNote(5);
+eleve1.recevoirNote(11);
+eleve1.recevoirNote(10);
+
+eleve1.salutations();
 
 while (eleve1.age < 70) {
     eleve1.vieillir();
