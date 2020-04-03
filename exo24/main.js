@@ -56,7 +56,7 @@ class Eleve extends Personne{
         return result;
     }
     presentation(){
-        if (this.age < 70) {
+        if (this.age < 18) {
             console.log(`Bonjour, je suis ${this.nom}, j'ai ${this.age} ans et j’étudie à ${this.etablissement} et ma moyenne est de ${this.moyenne()}`);
         } else {
             super.presentation();
@@ -86,12 +86,9 @@ console.log(eleve1.age);
 eleve1.presentation();
 
 function comparer(personne1, personne2) {
-    if (personne1.nom === personne2.nom && personne1.age === personne2.age) {
-        return true;         
-    }else{
-       return false;        
-    }
+    return personne1.nom === personne2.nom && personne1.age === personne2.age;
 }
+
 const personne3 = new Personne("William", 52);
 const personne4 = new Personne("William", 52);
 

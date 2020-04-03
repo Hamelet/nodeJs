@@ -4,7 +4,7 @@ function resolveAfter2Seconds() {
       setTimeout(function() {
         resolve("slow")
         console.log("slow promise is done")
-      }, 2000)
+      }, 3000)
     })
   }
   
@@ -14,7 +14,7 @@ function resolveAfter2Seconds() {
       setTimeout(function() {
         resolve("fast")
         console.log("fast promise is done")
-      }, 1000)
+      }, 2000)
     })
   }
   
