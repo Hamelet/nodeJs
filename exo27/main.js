@@ -8,11 +8,6 @@ let personneIds= {
 }
 console.log(personne[name]);
 
-// let personneIdsTab = [];
-// personneIdsTab.push(personneIds.pers0, personneIds.pers1, personneIds.pers3);
-// console.log(personneIdsTab);
-
-
 for (let i = 0; i <3; i++) {
     console.log(personneIds["pers"+i]); 
 }   
